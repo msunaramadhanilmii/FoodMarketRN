@@ -11,7 +11,7 @@ import {
   Order,
   Profile,
 } from '../pages';
-import { BottomNavigator } from '../components';
+import {BottomNavigator} from '../components';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -19,12 +19,12 @@ const Tab = createBottomTabNavigator();
 const MainApp = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
-      <Tab.Screen name="Home" component={Home}/>
+      <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Order" component={Order} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
-  )
-}
+  );
+};
 
 const Router = () => {
   return (
