@@ -1,6 +1,13 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
-import {ProfileDummy} from '../../assets';
+import {
+  FoodDummy1,
+  FoodDummy2,
+  FoodDummy3,
+  FoodDummy4,
+  ProfileDummy,
+} from '../../assets';
+import {FoodCard, Gap} from '../../components';
 
 const Home = () => {
   return (
@@ -12,7 +19,15 @@ const Home = () => {
         </View>
         <Image source={ProfileDummy} style={styles.profile} />
       </View>
-      <Text>Home Page Screen</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <View style={styles.foodCardContainer}>
+          <Gap width={24} />
+          <FoodCard image={FoodDummy1} />
+          <FoodCard image={FoodDummy2} />
+          <FoodCard image={FoodDummy3} />
+          <FoodCard image={FoodDummy4} />
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -20,8 +35,16 @@ const Home = () => {
 export default Home;
 
 const styles = StyleSheet.create({
-  profileContainer: {flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 24, paddingTop: 32, paddingBottom: 24, backgroundColor: 'white'},
+  profileContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 24,
+    paddingTop: 32,
+    paddingBottom: 24,
+    backgroundColor: 'white',
+  },
   appName: {fontSize: 22, fontFamily: 'Poppins-Meidum', color: '#020202'},
   desc: {fontSize: 14, fontFamily: 'Poppins-Light', color: '#8D92A3'},
   profile: {width: 50, height: 50, borderRadius: 8},
+  foodCardContainer: {flexDirection: 'row', marginVertical: 24},
 });
